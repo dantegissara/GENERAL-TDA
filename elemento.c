@@ -5,7 +5,7 @@
 
 #define CANTIDAD_ELEMENTOS 10
 
-struct _Elemento
+struct ElementoE
 {
     char nombre[20];
     int ID;
@@ -19,7 +19,7 @@ struct _Elemento
 
 Elemento crearElemento(char nombre[20], int ID, int cantidad)
 {
-    Elemento elemento = malloc(sizeof(struct _Elemento));
+    Elemento elemento = malloc(sizeof(struct ElementoE));
 
     strcpy(elemento->nombre, nombre);
 
@@ -99,6 +99,9 @@ int getCantidadElemento(Elemento elemento)
     return elemento->cantidad;
 }
 
+/*---------------------
+|FUNCIONES DE ELEMENTO
+-----------------------*/
 
 void mostrarElemento(Elemento elemento)
 {
@@ -136,7 +139,9 @@ void guardarElementos(Elemento elementos[])
     }
 }
 
-
-void destruirElemento(elemento){
+/*-----------
+|DESTRUCTOR
+------------*/
+void destruirElemento(Elemento elemento){
     free(elemento);
 }

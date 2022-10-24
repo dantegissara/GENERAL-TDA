@@ -13,6 +13,10 @@ struct GrupoG
     Elemento elementos[CANTIDAD_ELEMENTOS];
 };
 
+/*------------
+ | Constructor
+ -------------*/
+
 
 Grupo crearGrupo(char nombre[20], int ID)
 {
@@ -38,6 +42,20 @@ Grupo crearGrupoPorTeclado(){
     return crearGrupo(nombre,ID);
 }
 
+/*------------
+ | Destructor
+ -------------*/
+
+void destruirGrupo(Grupo grupo){
+    for(int i = 0;i<CANTIDAD_ELEMENTOS;i++){
+        destruirElemento(grupo->elementos[i]);
+    }
+    free(grupo);
+}
+
+/*------------------------
+ | Funciones de elementos
+ ------------------------*/
 
 void inicializarElementosEnGrupo(Grupo grupo)
 {
@@ -63,18 +81,6 @@ void agregarElementos(Grupo grupo, int cantidadElementos)
 }
 
 
-void mostrarGrupo(Grupo grupo)
-{
-    printf("\nGrupo:");
-    printf("\n\t- Nombre: %s", grupo->nombre);
-    printf("\n\t- ID: %d", grupo->ID);
-
-    printf("\nElementos: ");
-
-    for(int i = 0; i< CANTIDAD_ELEMENTOS; i++){
-        mostrarElemento(grupo->elementos[i]);
-    }
-}
 
 void modificarElemento(Grupo grupo,int IDElemento){
 
@@ -141,6 +147,23 @@ int encontrado = -1;
     }
 }
 
+/*----------------------
+ | Funciones de grupo
+ ----------------------*/
+
+void mostrarGrupo(Grupo grupo)
+{
+    printf("\nGrupo:");
+    printf("\n\t- Nombre: %s", grupo->nombre);
+    printf("\n\t- ID: %d", grupo->ID);
+
+    printf("\nElementos: ");
+
+    for(int i = 0; i< CANTIDAD_ELEMENTOS; i++){
+        mostrarElemento(grupo->elementos[i]);
+    }
+}
+
 int buscarPosicionLibre(Grupo grupo)
 {
     int encontrado = -1;
@@ -155,6 +178,10 @@ int buscarPosicionLibre(Grupo grupo)
     }
     return encontrado;
 }
+
+/*---------------------------
+ | Procedimientos de archivo
+ ---------------------------*/
 
 
 void guardarGrupoYElementos(Grupo grupo){
@@ -173,21 +200,7 @@ void guardarGrupoYElementos(Grupo grupo){
 
             guardarElementos(grupo->elementos);
         }
-
-
-
         fclose(archivoGrupo);
 }
 
 
-Elemento getElementos(Grupo grupo){
-    return grupo->elementos;
-}
-
-
-void destruirGrupo(Grupo grupo){
-    for(int i = 0;i<CANTIDAD_ELEMENTOS;i++){
-        destruirElemento(grupo->elementos[i])
-    }
-    free(grupo);
-}

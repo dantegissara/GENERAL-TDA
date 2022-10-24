@@ -1,2 +1,2 @@
-Juan+2+45
-Lean+5+23
+Lean+2+7
+Juan+5+6

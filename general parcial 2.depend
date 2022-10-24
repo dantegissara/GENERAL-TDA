@@ -1,26 +1,26 @@
 # depslib dependency file v1.0
-1666565571 source:c:\users\dante\desktop\general parcial 2\main.c
+1666580388 source:c:\users\dante\desktop\general parcial 2\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"elemento.h"
 	"grupo.h"
 
-1666554774 source:c:\users\dante\desktop\general parcial 2\elemento.c
+1666580790 source:c:\users\dante\desktop\general parcial 2\elemento.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"elemento.h"
 
-1666554513 c:\users\dante\desktop\general parcial 2\elemento.h
+1666580296 c:\users\dante\desktop\general parcial 2\elemento.h
 
-1666565975 source:c:\users\dante\desktop\general parcial 2\grupo.c
+1666580303 source:c:\users\dante\desktop\general parcial 2\grupo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"grupo.h"
 	"elemento.h"
 
-1666565323 c:\users\dante\desktop\general parcial 2\grupo.h
+1666580881 c:\users\dante\desktop\general parcial 2\grupo.h
 	"elemento.h"
 

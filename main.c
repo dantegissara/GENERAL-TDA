@@ -18,7 +18,7 @@ int main()
 
     mostrarGrupo(grupo);
 
-    guardarGrupo(grupo);
+    guardarGrupoYElementos(grupo);
 
     modificarElemento(grupo,2);
 
